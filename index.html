@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FFX SENSIX - M3 Mobile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    
+    <style>
+        @font-face {
+            font-family: 'GFF-Latin';
+            src: url('https://cdn.jsdelivr.net/gh/cyrust21/font@main/GFF-Latin-Bold.woff2') format('woff2');
+        }
 
+        :root {
+            /* Warna Berdasarkan XML M3 Kamu */
+            --bg: #111318;
+            --surface: #1D2024;
+            --on-surface: #E1E2E9;
+            --primary: #A4C9FE;
+            --on-primary: #00315D;
+            --primary-container: #204876;
+            --on-primary-container: #D4E3FF;
+            --tertiary: #D9BDE3;
+            --tertiary-container: #543F5E;
+            --error: #FFB4AB;
+            --outline: #8D9199;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--on-surface);
+            font-family: 'GFF-Latin', sans-serif;
+            margin: 0; padding: 0;
+            overflow: hidden; /* Mengunci layar agar tidak scroll vertikal */
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 20px 20px 10px;
+            text-align: center;
+        }
+
+        .brand-title {
+            font-size: 1.8rem;
+            margin: 0;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--primary), var(--tertiary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .promo-pill {
+            display: inline-block;
+            background: var(--tertiary-container);
+            color: #F6D9FF;
+            font-size: 0.65rem;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-top: 5px;
+            border: 1px solid rgba(217, 189, 227, 0.2);
+        }
+
+        /* --- SWIPE CONTAINER --- */
+        .pricing-wrapper {
+            flex: 1;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 10px 0 30px;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .pricing-wrapper::-webkit-scrollbar { display: none; }
+
+        /* --- M3 CARD DESIGN --- */
+        .card {
+            background: var(--surface);
+            border-radius: 28px; /* Khas Material 3 */
+            width: 85vw;
+            height: 72vh; /* Tinggi pas untuk 1 layar */
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            margin: 0 auto;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--outline);
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .card-premium {
+            border: 1px solid var(--primary);
+            background: linear-gradient(180deg, var(--surface) 0%, #151a22 100%);
+        }
+
+        .hot-chip {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #93000A; /* Error Container */
+            color: white;
+            padding: 4px 16px;
+            border-radius: 10px;
+            font-size: 0.6rem;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        /* --- LOGO & CONTENT --- */
+        .logo-box {
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo-svg { width: 70px; height: 70px; }
+        .spin { animation: rotation 15s linear infinite; transform-origin: center; }
+        @keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .plan-info { text-align: center; margin-bottom: 15px; }
+        .plan-name { font-size: 1.2rem; color: var(--primary); margin: 0; }
+        .plan-price { font-size: 1.5rem; font-weight: bold; margin: 4px 0; }
+        .old-price { font-size: 0.8rem; opacity: 0.4; text-decoration: line-through; }
+
+        /* --- LISTS --- */
+        .features {
+            flex: 1;
+            overflow-y: auto; /* List bisa di-scroll jika kepanjangan */
+            margin-bottom: 15px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
+            color: var(--on-surface);
+            opacity: 0.9;
+        }
+
+        .feature-item .icon {
+            font-size: 16px;
+            color: var(--primary);
+        }
+
+        /* --- M3 BUTTON --- */
+        .m3-btn {
+            background: var(--primary-container);
+            color: var(--on-primary-container);
+            border: none;
+            padding: 14px;
+            border-radius: 100px;
+            font-family: 'GFF-Latin', sans-serif;
+            font-weight: bold;
+            font-size: 0.9rem;
+            width: 100%;
+            transition: 0.2s;
+        }
+
+        .btn-zenith {
+            background: var(--primary);
+            color: var(--on-primary);
+        }
+
+        /* --- INDICATOR --- */
+        .indicator {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding-bottom: 20px;
+        }
+
+        .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--outline); opacity: 0.3; }
+        .dot.active { background: var(--primary); opacity: 1; width: 15px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="brand-title">FFX SensiX</h1>
+        <div class="promo-pill">DISCOUNT 50% ENDING SOON</div>
+    </header>
+
+    <div class="pricing-wrapper" id="slider">
+        <div class="card">
+            <div class="logo-box">
+                <svg class="logo-svg" viewBox="0 0 100 100" style="filter: drop-shadow(0 0 5px var(--tertiary));">
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="var(--tertiary)" stroke-width="2" stroke-dasharray="8 4" class="spin"/>
+                    <circle cx="50" cy="50" r="18" fill="var(--tertiary)" fill-opacity="0.1" stroke="var(--tertiary)" stroke-width="3"/>
+                    <path d="M50 35 L50 65 M35 50 L65 50" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="plan-info">
+                <p class="plan-name" style="color: var(--tertiary);">AETHER</p>
+                <p class="plan-price">FREE</p>
+            </div>
+            <div class="features">
+                <div class="feature-item"><span class="material-symbols-outlined icon">check_circle</span>Vertical Drag Control 30%</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">check_circle</span>Sens Optimize Standar</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">check_circle</span>Custom ROG Monitor</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">check_circle</span>SurfaceFlinger Tuning</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">check_circle</span>Touch Tracker High</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">check_circle</span>Gesture Control High</div>
+            </div>
+            <button class="m3-btn" style="opacity: 0.5;">TERPASANG</button>
+        </div>
+
+        <div class="card card-premium">
+            <div class="hot-chip">MOST POPULAR</div>
+            <div class="logo-box">
+                <svg class="logo-svg" viewBox="0 0 100 100" style="filter: drop-shadow(0 0 8px var(--primary));">
+                    <rect x="25" y="25" width="50" height="50" rx="12" fill="none" stroke="var(--primary)" stroke-width="3" transform="rotate(45 50 50)" class="spin"/>
+                    <path d="M50 20 L80 50 L50 80 L20 50 Z" fill="var(--primary)" fill-opacity="0.2" stroke="white" stroke-width="2"/>
+                    <circle cx="50" cy="50" r="6" fill="white"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/></circle>
+                </svg>
+            </div>
+            <div class="plan-info">
+                <p class="plan-name">ZENITH PREMIUM</p>
+                <p class="old-price">Rp 100.000</p>
+                <p class="plan-price">Rp 50.000</p>
+            </div>
+            <div class="features">
+                <div class="feature-item"><span class="material-symbols-outlined icon">verified</span><b>Vertical Drag Control 50%</b></div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">bolt</span>Sens Optimize MAXIMUM</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">bolt</span>Custom Monitor VIP</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">bolt</span>SurfaceFlinger Tuning</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">bolt</span>Touch Tracker MAXIMUM</div>
+                <div class="feature-item"><span class="material-symbols-outlined icon">bolt</span>Auto Optimize Cache</div>
+            </div>
+            <button class="m3-btn btn-zenith" onclick="buy()">BELI SEKARANG</button>
+        </div>
+    </div>
+
+    <div class="indicator">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+    </div>
+
+    <script>
+        function buy() {
+            window.location.href = "https://wa.me/6283832031858?text=Halo%20Admin%20saya%20mau%20order%20Zenith";
+        }
+
+        // Script sederhana untuk indikator dot
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+        slider.addEventListener('scroll', () => {
+            const index = Math.round(slider.scrollLeft / window.innerWidth);
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        });
+    </script>
+</body>
+</html>
