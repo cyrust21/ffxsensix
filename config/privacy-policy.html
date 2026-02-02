@@ -2,11 +2,11 @@
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <title>Privacy Policy — FFX SENSIX</title>
-  <meta name="description" content="Kebijakan Privasi untuk FFX SENSIX.">
 
   <style>
+    /* 1. FONT IMPORT */
     @font-face {
       font-family: "GFF Latin Bold";
       src: url("https://cyrust21.github.io/font/GFF-Latin-Bold.ttf") format("truetype");
@@ -18,41 +18,52 @@
       font-weight: 500;
     }
 
+    /* 2. VARIABLES & THEME */
     :root {
       --bg: #1D2024; 
       --title: #E1E2E9;
       --text: #C3C6CF; 
       --muted: #8E9199; 
-      --accent: #3B608F; /* Aksen biru yang lebih cerah untuk dark mode */
-      --container: 1000px;
+      --accent: #3B608F;
     }
 
+    /* 3. RESET & BASE STYLE */
+    * { box-sizing: border-box; }
+    
     body {
-      background: var(--bg); 
+      background-color: var(--bg); 
       color: var(--text); 
       margin: 0; 
-      padding: 32px; 
-      display: flex; 
-      justify-content: center; 
+      padding: 20px; 
       font-family: "GFF Latin Medium", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     .wrap {
-      max-width: var(--container); 
       width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* 4. TYPOGRAPHY */
+    header {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #33373D;
+      padding-bottom: 15px;
     }
 
     h1 {
       color: var(--title);
-      font-size: 28px; 
-      margin-bottom: 6px; 
+      font-size: 26px; 
+      margin: 0 0 8px 0; 
       font-family: "GFF Latin Bold", sans-serif;
     }
 
     h2 {
       color: var(--title);
       font-size: 18px; 
-      margin: 20px 0 10px 0; 
+      margin: 24px 0 12px 0; 
       font-family: "GFF Latin Bold", sans-serif;
       border-left: 4px solid var(--accent);
       padding-left: 12px;
@@ -60,35 +71,31 @@
 
     .meta {
       color: var(--muted); 
-      margin-bottom: 24px;
+      font-size: 13px;
     }
 
-    section {
-      margin: 16px 0; 
-      line-height: 1.6;
-    }
+    p { margin: 12px 0; }
 
     ul {
-      margin: 8px 0 8px 20px;
+      margin: 12px 0;
+      padding-left: 20px;
     }
 
-    li {
-      margin-bottom: 8px;
-    }
+    li { margin-bottom: 8px; }
 
+    strong { color: var(--title); }
+
+    /* 5. COMPONENTS */
     a {
       color: var(--accent); 
       text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      font-weight: bold;
     }
 
     .highlight {
-      background: #25292E; /* Warna sedikit lebih terang dari BG */
+      background: #25292E;
       padding: 16px;
-      border-radius: 8px;
+      border-radius: 12px;
       border: 1px solid #33373D;
       margin: 20px 0;
     }
@@ -96,151 +103,90 @@
     footer {
       margin-top: 40px; 
       color: var(--muted); 
-      font-size: 13px; 
+      font-size: 12px; 
       border-top: 1px solid #33373D; 
-      padding-top: 18px;
+      padding-top: 20px;
+      text-align: center;
+      line-height: 1.8;
     }
 
-    @media (max-width:600px) {
-      body { padding: 16px; } 
-      h1 { font-size: 24px; }
+    /* 6. RESPONSIVE */
+    @media (max-width: 480px) {
+      body { padding: 15px; }
+      h1 { font-size: 22px; }
+      h2 { font-size: 17px; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap" role="main">
+  <div class="wrap">
     <header>
       <h1>Privacy Policy</h1>
       <div class="meta">Last updated: February 02, 2026 • FFX SENSIX</div>
     </header>
 
     <section>
-      <p>FFX SENSIX berkomitmen untuk melindungi privasi Anda. Kebijakan ini menjelaskan bagaimana kami menangani data saat Anda menggunakan aplikasi kami.</p>
+      <p><strong>FFX SENSIX</strong> berkomitmen untuk melindungi privasi Anda. Kebijakan ini menjelaskan bagaimana kami menangani data saat Anda menggunakan aplikasi kami.</p>
     </section>
 
     <section>
       <h2>1. Informasi yang Kami Kumpulkan</h2>
       <p>Kami meminimalkan pengumpulan data pribadi. Kami tidak mengumpulkan nama, alamat, atau daftar kontak. Data yang diproses meliputi:</p>
       <ul>
-        <li><strong>Identifikasi Anonim:</strong> Autentikasi anonim untuk identitas pengguna unik.</li>
-        <li><strong>Data Teknis:</strong> Jenis perangkat, versi OS, dan ID perangkat terenkripsi untuk validasi VIP.</li>
+        <li><strong>Identifikasi Anonim:</strong> Autentikasi unik untuk mengidentifikasi status pengguna tanpa data pribadi.</li>
+        <li><strong>Data Teknis:</strong> Jenis perangkat, versi sistem operasi, dan ID perangkat terenkripsi untuk validasi status langganan VIP.</li>
       </ul>
     </section>
 
     <section class="highlight">
       <h2>2. Penggunaan API Shizuku</h2>
-      <p>Aplikasi menggunakan API Shizuku untuk menjalankan optimasi sistem secara lokal:</p>
+      <p>Aplikasi ini mengintegrasikan <strong>API Shizuku</strong> untuk melakukan optimasi tingkat sistem secara lokal:</p>
       <ul>
         <li>Optimasi V-Sync untuk stabilitas frame rate.</li>
-        <li>Penyesuaian resolusi layar untuk responsivitas sentuhan.</li>
+        <li>Penyesuaian resolusi layar untuk meningkatkan responsivitas sentuhan.</li>
         <li>Manajemen cache memori untuk menjaga performa perangkat.</li>
       </ul>
-      <p>Akses ini <strong>tidak</strong> mengambil file pribadi atau data sensitif pengguna.</p>
+      <p>Akses ini <strong>hanya</strong> digunakan untuk efisiensi hardware dan tidak mengakses file pribadi atau data sensitif lainnya.</p>
     </section>
 
     <section>
       <h2>3. Layanan Pihak Ketiga</h2>
-      <p>Kami menggunakan layanan Google berikut untuk mendukung fungsionalitas aplikasi:</p>
+      <p>Kami menggunakan layanan Google berikut untuk mendukung fungsionalitas:</p>
       <ul>
-        <li><strong>Firebase Authentication (Anonymous):</strong> Identitas unik anonim tanpa login manual.</li>
-        <li><strong>Firebase Realtime Database:</strong> Penyimpanan konfigurasi dan validasi lisensi VIP.</li>
-        <li><strong>AdMob:</strong> Penayangan iklan melalui pengumpulan data teknis perangkat.</li>
+        <li><strong>Firebase Authentication:</strong> Identitas unik anonim untuk akses fitur VIP.</li>
+        <li><strong>Firebase Realtime Database:</strong> Menyimpan parameter konfigurasi optimasi.</li>
+        <li><strong>AdMob:</strong> Menampilkan iklan yang relevan melalui data teknis perangkat.</li>
       </ul>
-      <p>Kebijakan Pihak Ketiga dapat diakses di: 
-        <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Services</a> dan 
+      <p>Kebijakan mereka dapat diakses di: 
+        <a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a> dan 
         <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Security</a>.
       </p>
     </section>
 
     <section>
       <h2>4. Keamanan Game & Data</h2>
-      <p>FFX SENSIX bukan alat modifikasi (mod), cheat, atau hack. Tidak ada modifikasi kode biner pada aplikasi pihak ketiga. Semua data dikirim melalui protokol HTTPS terenkripsi.</p>
+      <p>FFX SENSIX <strong>bukan</strong> merupakan alat modifikasi (mod), cheat, atau hack. Kami tidak memodifikasi kode biner aplikasi pihak ketiga. Semua komunikasi data menggunakan protokol HTTPS terenkripsi.</p>
     </section>
 
     <section>
       <h2>5. Penyimpanan Data</h2>
-      <p>Data anonim disimpan selama aplikasi digunakan. Data pada database kami akan dibersihkan secara otomatis jika tidak ada aktivitas selama 24 bulan.</p>
+      <p>Data teknis anonim disimpan selama Anda menggunakan aplikasi. Database kami akan membersihkan data secara otomatis jika tidak ada aktivitas selama 24 bulan.</p>
     </section>
 
     <section>
-      <h2>Contact</h2>
-      <p>Jika Anda memiliki pertanyaan terkait kebijakan privasi ini, silakan hubungi kami:</p>
+      <h2>Hubungi Kami</h2>
+      <p>Jika ada pertanyaan mengenai kebijakan privasi ini, silakan hubungi tim pengembang:</p>
       <ul>
         <li>Email: <a href="mailto:cyrustmods21@gmail.com">cyrustmods21@gmail.com</a></li>
-        <li>Telegram: <a href="#">FFX SENSIX Support</a></li>
+        <li>Telegram: <a href="https://t.me/cyrust_mods" target="_blank">FFX SENSIX Support</a></li>
       </ul>
     </section>
 
     <footer>
-      © 2026 FFX SENSIX. All rights reserved. <br>
-      Dibuat sesuai standar Google Play Store Developer Policy.
+      © 2026 FFX SENSIX. All rights reserved.<br>
+      Dibuat sesuai dengan standar kebijakan pengembang Google Play Store.
     </footer>
   </div>
 </body>
-</html>      <div class="meta">Last updated: February 02, 2026 • FFX SENSIX</div>
-    </header>
+  </html>
 
-    <section>
-      <p>FFX SENSIX berkomitmen untuk melindungi privasi Anda. Kebijakan ini menjelaskan bagaimana kami menangani data saat Anda menggunakan aplikasi kami.</p>
-    </section>
-
-    <section>
-      <h2>1. Informasi yang Kami Kumpulkan</h2>
-      <p>Kami meminimalkan pengumpulan data pribadi. Kami tidak mengumpulkan nama, alamat, atau daftar kontak. Data yang diproses meliputi:</p>
-      <ul>
-        <li><strong>Identifikasi Anonim:</strong> Autentikasi anonim untuk identitas pengguna unik.</li>
-        <li><strong>Data Teknis:</strong> Jenis perangkat, versi OS, dan ID perangkat terenkripsi untuk validasi VIP.</li>
-      </ul>
-    </section>
-
-    <section class="highlight">
-      <h2>2. Penggunaan API Shizuku</h2>
-      <p>Aplikasi menggunakan API Shizuku untuk menjalankan optimasi sistem secara lokal:</p>
-      <ul>
-        <li>Optimasi V-Sync untuk stabilitas frame rate.</li>
-        <li>Penyesuaian resolusi layar untuk responsivitas sentuhan.</li>
-        <li>Manajemen cache memori untuk menjaga performa perangkat.</li>
-      </ul>
-      <p>Akses ini <strong>tidak</strong> mengambil file pribadi atau data sensitif pengguna.</p>
-    </section>
-
-    <section>
-      <h2>3. Layanan Pihak Ketiga</h2>
-      <p>Kami menggunakan layanan Google berikut untuk mendukung fungsionalitas aplikasi:</p>
-      <ul>
-        <li><strong>Firebase Authentication (Anonymous):</strong> Identitas unik anonim tanpa login manual.</li>
-        <li><strong>Firebase Realtime Database:</strong> Penyimpanan konfigurasi dan validasi lisensi VIP.</li>
-        <li><strong>AdMob:</strong> Penayangan iklan melalui pengumpulan data teknis perangkat.</li>
-      </ul>
-      <p>Kebijakan Pihak Ketiga dapat diakses di: 
-        <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Services</a> dan 
-        <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Security</a>.
-      </p>
-    </section>
-
-    <section>
-      <h2>4. Keamanan Game & Data</h2>
-      <p>FFX SENSIX bukan alat modifikasi (mod), cheat, atau hack. Tidak ada modifikasi kode biner pada aplikasi pihak ketiga. Semua data dikirim melalui protokol HTTPS terenkripsi.</p>
-    </section>
-
-    <section>
-      <h2>5. Penyimpanan Data</h2>
-      <p>Data anonim disimpan selama aplikasi digunakan. Data pada database kami akan dibersihkan secara otomatis jika tidak ada aktivitas selama 24 bulan.</p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>Jika Anda memiliki pertanyaan terkait kebijakan privasi ini, silakan hubungi kami:</p>
-      <ul>
-        <li>Email: <a href="mailto:cyrustmods21@gmail.com">cyrustmods21@gmail.com</a></li>
-        <li>Telegram: <a href="#">FFX SENSIX Support</a></li>
-      </ul>
-    </section>
-
-    <footer>
-      © 2026 FFX SENSIX. All rights reserved. <br>
-      Dibuat sesuai standar Google Play Store Developer Policy.
-    </footer>
-  </div>
-</body>
-</html>
