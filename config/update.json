@@ -3,7 +3,7 @@
     "target_pkg": "com.cyrust.fftoolspromaxnew",
     "latest_version_code": 2,
     "latest_version_name": "1.2.0",
-    "force_update": false,
+    "force_update": true,
     "update_url": "https://play.google.com/store/apps/details?id=com.cyrust.fftoolspromaxnew",
     "changelog": "• New Features\n• Performance Boost"
   }
