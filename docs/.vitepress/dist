@@ -1,3 +1,0 @@
-"scripts": {
-  "docs:build": "vitepress build docs"
-}
