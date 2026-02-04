@@ -1,0 +1,22 @@
+:root {
+  /* Warna utama (Accent) */
+  --vp-c-brand-1: #ff4757; /* Merah terang */
+  --vp-c-brand-2: #e84118; /* Merah gelap saat hover */
+  --vp-c-brand-3: #c23616;
+  
+  /* Warna latar belakang (opsional) */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #ff4757 30%, #ff6b81);
+}
+
+/* Membuat tampilan kartu fitur lebih melengkung/modern */
+.VPFeature {
+  border-radius: 12px !important;
+  border: 1px solid var(--vp-c-bg-soft);
+  transition: transform 0.3s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-5px);
+  border-color: var(--vp-c-brand-1);
+}
