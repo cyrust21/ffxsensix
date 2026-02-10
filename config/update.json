@@ -2,9 +2,9 @@
   "update_info": {
     "target_pkg": "com.cyrust.fftoolspromaxnew",
     "latest_version_code": 16,
-    "latest_version_name": "3.1.0",
-    "is_announcement": false,
-    "force_update": true,
+    "latest_version_name": "3.0",
+    "is_announcement": true,
+    "force_update": false,
     "is_critical": true,
     "btn_text": "DAPATKAN UPDATE",
     "update_url": "https://play.google.com/store/apps/details?id=com.cyrust.fftoolspromaxnew",
