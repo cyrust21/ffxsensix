@@ -1,11 +1,11 @@
 {
   "update_info": {
     "target_pkg": "com.cyrust.fftoolspromaxnew",
-    "latest_version_code": 15,
+    "latest_version_code": 16,
     "latest_version_name": "3.1.0",
     "force_update": true,
-    "is_critical": false,
+    "is_critical": true,
     "update_url": "https://play.google.com/store/apps/details?id=com.cyrust.fftoolspromaxnew",
-    "changelog": "• New UI Experience\n• Fix Crash on Android 14\n• Server Optimization\n• Improved Sensitivity Logic"
+    "changelog": "• Fixed internal security\n• Performance optimization\n• Improved touch response"
   }
 }
