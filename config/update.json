@@ -1,7 +1,7 @@
 {
   "update_info": {
     "target_pkg": "com.cyrust.fftoolspromaxnew",
-    "latest_version_code": 16,
+    "latest_version_code": 15,
     "latest_version_name": "3.1.0",
     "force_update": true,
     "is_critical": true,
