@@ -6,8 +6,8 @@
     "is_announcement": false,
     "force_update": true,
     "is_critical": true,
-    "btn_text": "UPDATE SEKARANG",
+    "btn_text": "DAPATKAN UPDATE",
     "update_url": "https://play.google.com/store/apps/details?id=com.cyrust.fftoolspromaxnew",
-    "changelog": "• Perbaikan Bug\n• Fitur Baru Aktif"
+    "changelog": "• Perbaikan sistem keamanan\n• Peningkatan performa aplikasi\n• Support Android 14"
   }
 }
