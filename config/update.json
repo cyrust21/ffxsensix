@@ -3,7 +3,7 @@
     "target_pkg": "com.cyrust.fftoolspromaxnew",
     "latest_version_code": 16,
     "latest_version_name": "3.0",
-    "is_announcement": true,
+    "is_announcement": false,
     "force_update": false,
     "is_critical": true,
     "btn_text": "DAPATKAN UPDATE",
