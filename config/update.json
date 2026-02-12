@@ -1,8 +1,8 @@
 {
   "update_info": {
     "target_pkg": "com.cyrust.fftoolspromaxnew",
-    "latest_version_code": 16,
-    "latest_version_name": "5.0",
+    "latest_version_code": 18,
+    "latest_version_name": "5.1",
     "is_announcement": false,
     "force_update": true,
     "is_critical": true,
