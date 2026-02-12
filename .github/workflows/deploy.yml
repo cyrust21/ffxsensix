@@ -1,9 +1,9 @@
-name: Deploy Website
+Name: Deploy Website
 
 on:
   push:
     branches:
-      - main  # Ganti jika nama branch utama kamu bukan 'main'
+      - main
   workflow_dispatch:
 
 permissions:
@@ -34,13 +34,18 @@ jobs:
       - name: Build with VitePress
         run: |
           bun run docs:build
-          # Membuat file .nojekyll agar folder dengan underscore tidak diabaikan oleh GitHub
+          
+          # --- TAMBAHKAN BAGIAN INI ---
+          # Menyalin folder config dari root ke folder dist agar bisa diakses di web
+          cp -r config docs/.vitepress/dist/
+          # ----------------------------
+
+          # Membuat file .nojekyll agar folder dengan underscore tidak diabaikan
           touch docs/.vitepress/dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Pastikan path ini sesuai dengan lokasi output build VitePress kamu
           path: docs/.vitepress/dist
 
   deploy:
