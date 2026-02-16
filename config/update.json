@@ -5,7 +5,7 @@
     "latest_version_name": "5.1",
     "is_announcement": false,
     "text_notif": "Versi Terbaru FFX Sensix Tersedia! Versi Terbaru FFX Sensix Tersedia! Versi Terbaru FFX Sensix Tersedia! <a href='https://ffxsensix.blogspot.com/'>Klik</a>",
-    "force_update": true,
+    "force_update": false,
     "is_critical": false,
     "btn_text": "UPDATE",
     "update_url": "https://play.google.com/store/apps/details?id=com.cyrust.fftoolspromaxnew",
